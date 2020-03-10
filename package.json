@@ -1,0 +1,49 @@
+{
+  "name": "npm-package-info",
+  "version": "1.0.0-beta.1",
+  "description": "",
+  "author": "Jakub Biesiada",
+  "license": "MIT",
+  "main": "lib/npm-package-info.cjs.js",
+  "module": "lib/npm-package-info.esm.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "npm run build -- --watch",
+    "lint": "eslint 'src/**/*.ts' --fix",
+    "prettier": "prettier --write 'src/**/*.ts'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JB1905/npm-package-info.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/JB1905/npm-package-info/issues"
+  },
+  "homepage": "https://github.com/JB1905/npm-package-info#readme",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "@typescript-eslint/parser": "^2.20.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.7",
+    "prettier": "^1.19.1",
+    "rollup-plugin-terser": "^5.2.0",
+    "rollup-plugin-typescript2": "^0.26.0",
+    "typescript": "^3.8.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{ts}": [
+      "npm run prettier",
+      "npm run lint"
+    ]
+  }
+}
