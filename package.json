@@ -45,5 +45,8 @@
       "npm run prettier",
       "npm run lint"
     ]
+  },
+  "peerDependencies": {
+    "child_process": "^1.0.2"
   }
 }
