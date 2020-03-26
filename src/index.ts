@@ -1,4 +1,7 @@
 import { exec } from 'child_process';
+import { promisify } from 'util';
+
+const execAsync = promisify(exec);
 
 const npmPackageInfo = async (name: string, version?: string) => {
   const data: { [key: string]: string } = {};
@@ -18,24 +21,19 @@ const npmPackageInfo = async (name: string, version?: string) => {
     'versions',
   ];
 
-  exec(
-    `npm view ${name}${version && `@${version}`} ${info.join(' ')}`,
-    (error, stdout, stderr) => {
-      if (error) {
-        return console.log(error);
-      }
-
-      if (stderr) {
-        return console.log(stderr);
-      }
-
-      stdout.split('\n').map((line) => {
-        const [key, value] = line.split(' = ').map((_) => _.trim());
-
-        data[key] = value;
-      });
-    }
+  const { stdout, stderr } = await execAsync(
+    `npm view ${name}${version ? `@${version}` : ''} ${info.join(' ')}`
   );
+
+  if (stderr) {
+    return console.log(stderr);
+  }
+
+  stdout.split('\n').map((line) => {
+    const [key, value] = line.split(' = ').map((_) => _.trim());
+
+    data[key] = value;
+  });
 
   return data;
 };
