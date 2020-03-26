@@ -14,7 +14,7 @@ const npmPackageInfo = async (name: string) => {
     'versions',
     'version',
     'dist-tags',
-    'deprecated'
+    'deprecated',
   ];
 
   exec(`npm view ${name} ${info.join(' ')}`, (error, stdout, stderr) => {
@@ -26,8 +26,8 @@ const npmPackageInfo = async (name: string) => {
       return console.log(stderr);
     }
 
-    stdout.split('\n').map(line => {
-      const [key, value] = line.split(' = ').map(_ => _.trim());
+    stdout.split('\n').map((line) => {
+      const [key, value] = line.split(' = ').map((_) => _.trim());
 
       data[key] = value;
     });
