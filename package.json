@@ -17,7 +17,13 @@
     "type": "git",
     "url": "https://github.com/JB1905/npm-package-info.git"
   },
-  "keywords": [],
+  "keywords": [
+    "npm",
+    "package",
+    "repository",
+    "info",
+    "check"
+  ],
   "bugs": {
     "url": "https://github.com/JB1905/npm-package-info/issues"
   },
@@ -35,19 +41,19 @@
     "rollup-plugin-typescript2": "^0.26.0",
     "typescript": "^3.8.3"
   },
+  "peerDependencies": {
+    "child_process": "^1.0.2",
+    "util": "^0.12.2"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
-    "src/**/*.{ts}": [
+    "src/**/*.ts": [
       "npm run prettier",
       "npm run lint"
     ]
-  },
-  "peerDependencies": {
-    "child_process": "^1.0.2",
-    "util": "^0.12.2"
   }
 }

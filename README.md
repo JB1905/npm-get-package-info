@@ -16,5 +16,11 @@ Or Yarn:
 $ yarn add npm-package-info
 ```
 
+## Getting Started
+
+```js
+const info = await npmPackageInfo(/* package name */,  /* package version */);
+```
+
 ## License
 This project is licensed under the MIT License © 2021-present Jakub Biesiada
