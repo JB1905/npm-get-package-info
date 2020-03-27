@@ -1,7 +1,7 @@
 {
   "name": "npm-package-info",
   "version": "1.0.0-beta.1",
-  "description": "",
+  "description": "Get info about npm package",
   "author": "Jakub Biesiada",
   "license": "MIT",
   "main": "lib/npm-package-info.cjs.js",

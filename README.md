@@ -4,6 +4,7 @@
 [![NPM downloads](http://img.shields.io/npm/dm/npm-package-info.svg?style=flat-square)](https://www.npmjs.com/package/npm-package-info)
 
 ## About
+Get info about npm package
 
 ## How to Install
 First, install the library in your project by npm:
