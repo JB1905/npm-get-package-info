@@ -24,4 +24,4 @@ const info = await npmPackageInfo(/* package name */,  /* package version */);
 ```
 
 ## License
-This project is licensed under the MIT License © 2021-present Jakub Biesiada
+This project is licensed under the MIT License © 2020-present Jakub Biesiada
