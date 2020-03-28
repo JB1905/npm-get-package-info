@@ -1,11 +1,11 @@
 {
-  "name": "npm-package-info",
+  "name": "npm-get-package-info",
   "version": "1.0.0-beta.1",
   "description": "Get info about npm package",
   "author": "Jakub Biesiada",
   "license": "MIT",
-  "main": "lib/npm-package-info.cjs.js",
-  "module": "lib/npm-package-info.esm.js",
+  "main": "lib/npm-get-package-info.cjs.js",
+  "module": "lib/npm-get-package-info.esm.js",
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "rollup -c",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/JB1905/npm-package-info.git"
+    "url": "https://github.com/JB1905/npm-get-package-info.git"
   },
   "keywords": [
     "npm",
@@ -25,9 +25,9 @@
     "check"
   ],
   "bugs": {
-    "url": "https://github.com/JB1905/npm-package-info/issues"
+    "url": "https://github.com/JB1905/npm-get-package-info/issues"
   },
-  "homepage": "https://github.com/JB1905/npm-package-info#readme",
+  "homepage": "https://github.com/JB1905/npm-get-package-info#readme",
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^7.1.1",
     "@typescript-eslint/parser": "^2.25.0",

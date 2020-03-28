@@ -3,7 +3,7 @@ import { promisify } from 'util';
 
 const execAsync = promisify(exec);
 
-const npmPackageInfo = async (name: string, version?: string) => {
+const npmGetPackageInfo = async (name: string, version?: string) => {
   const data: { [key: string]: string } = {};
 
   const info = [
@@ -38,4 +38,4 @@ const npmPackageInfo = async (name: string, version?: string) => {
   return data;
 };
 
-export default npmPackageInfo;
+export default npmGetPackageInfo;
