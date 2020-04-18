@@ -3,8 +3,32 @@ import { promisify } from 'util';
 
 const execAsync = promisify(exec);
 
-const npmGetPackageInfo = async (name: string, version?: string) => {
-  const info = [
+type InfoType =
+  | 'dependencies'
+  | 'deprecated'
+  | 'description'
+  | 'dist'
+  | 'dist-tags'
+  | 'keywords'
+  | 'license'
+  | 'maintainers'
+  | 'name'
+  | 'repository'
+  | 'version'
+  | 'versions';
+
+interface Options {
+  name: string;
+  version?: string;
+  parseOutput?: boolean;
+  info: InfoType[];
+}
+
+const npmGetPackageInfo = async ({
+  name,
+  version,
+  parseOutput = true,
+  info = [
     'dependencies',
     'deprecated',
     'description',
@@ -17,17 +41,15 @@ const npmGetPackageInfo = async (name: string, version?: string) => {
     'repository',
     'version',
     'versions',
-  ];
-
+  ],
+}: Options): Promise<string | Record<InfoType, any>> => {
   const { stdout, stderr } = await execAsync(
     `npm view ${name}${version ? `@${version}` : ''} ${info.join(' ')} -json`
   );
 
-  if (stderr) {
-    return console.log(stderr);
-  }
+  if (stderr) return stderr;
 
-  return stdout;
+  return parseOutput ? JSON.parse(stdout) : stdout;
 };
 
 export default npmGetPackageInfo;
