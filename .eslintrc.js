@@ -4,6 +4,7 @@ module.exports = {
   plugins: ['prettier'],
   env: {
     node: true,
+    jest: true,
   },
   parserOptions: {
     ecmaVersion: 6,
