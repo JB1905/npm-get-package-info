@@ -1,7 +1,7 @@
 import npmGetPackageInfo from '../src';
 
 describe('package info', () => {
-  it('should return package info for latest react version', async () => {
+  it('should return package info for the latest react version', async () => {
     const info = await npmGetPackageInfo({
       name: 'react',
     });
@@ -18,7 +18,7 @@ describe('package info', () => {
     expect(info).not.toBeNull();
   });
 
-  it('should return stringified license & description for latest vue', async () => {
+  it('should return stringified license & description for the latest vue version', async () => {
     const info = await npmGetPackageInfo({
       name: 'vue',
       parseOutput: false,
