@@ -6,6 +6,33 @@ describe('package info', () => {
       name: 'react',
     });
 
-    expect(info).toBe(true);
+    expect(info).not.toBeNull();
   });
+
+  it('should return package info for @angular/cli@8.0.0', async () => {
+    const info = await npmGetPackageInfo({
+      name: '@angular/cli',
+      version: '8.0.0',
+    });
+
+    expect(info).not.toBeNull();
+  });
+
+  it('should return stringified license & description for latest vue', async () => {
+    const info = await npmGetPackageInfo({
+      name: 'vue',
+      parseOutput: false,
+      info: ['license', 'description'],
+    });
+
+    expect(info).not.toBeNull();
+  });
+
+  // it('should return throw an error', async () => {
+  //   const info = await npmGetPackageInfo({
+  //     name: '',
+  //   });
+
+  //   expect(info).toThrowError();
+  // });
 });
