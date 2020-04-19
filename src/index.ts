@@ -1,28 +1,11 @@
 import { exec } from 'child_process';
 import { promisify } from 'util';
 
+import { Options } from './interfaces/Options';
+
+import { Info } from './types/Info';
+
 const execAsync = promisify(exec);
-
-type InfoType =
-  | 'dependencies'
-  | 'deprecated'
-  | 'description'
-  | 'dist'
-  | 'dist-tags'
-  | 'keywords'
-  | 'license'
-  | 'maintainers'
-  | 'name'
-  | 'repository'
-  | 'version'
-  | 'versions';
-
-interface Options {
-  name: string;
-  version?: string;
-  parseOutput?: boolean;
-  info: InfoType[];
-}
 
 const npmGetPackageInfo = async ({
   name,
@@ -42,7 +25,7 @@ const npmGetPackageInfo = async ({
     'version',
     'versions',
   ],
-}: Options): Promise<string | Record<InfoType, any>> => {
+}: Options): Promise<string | Record<Info, any>> => {
   const { stdout, stderr } = await execAsync(
     `npm view ${name}${version ? `@${version}` : ''} ${info.join(' ')} -json`
   );
