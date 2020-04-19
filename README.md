@@ -29,7 +29,7 @@ Name | Type | Default | Description | Available options
 **name** | string | `undefined` | Package name | e.g: `react`
 **version** | string | `undefined` | Package version | e.g: `16.8.0`
 **parseOutput** | boolean | `true` | Parse results to JSON | true - enable, false = disable
-**info** | Info[] | all Info values | Info about packages to be fetched | Info values
+**info** | Info[] | all `Info` values | Info about packages to be fetched | `Info` values
 
 ## License
 This project is licensed under the MIT License © 2020-present Jakub Biesiada
