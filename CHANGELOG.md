@@ -2,4 +2,4 @@
 
 ## 1.0.0 (Soon)
 #### New Feature
-- addded `npmGetPackageInfo` with `name`, `version`, `parseOutput` & `info` options
+- added `npmGetPackageInfo` with `name`, `version`, `parseOutput` & `info` options
