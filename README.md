@@ -20,7 +20,9 @@ $ yarn add npm-get-package-info
 ## Getting Started
 
 ```js
-const info = await npmGetPackageInfo(/* package name */,  /* package version */);
+const info = await npmGetPackageInfo({
+  // options
+});
 ```
 
 ## Options
