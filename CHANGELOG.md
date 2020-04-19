@@ -1,5 +1,5 @@
 # npm-get-package-info Changelog
 
-## 1.0.0 beta 1 (Soon)
+## 1.0.0 (Soon)
 #### New Feature
 - addded `npmGetPackageInfo` with `name`, `version`, `parseOutput` & `info` options
