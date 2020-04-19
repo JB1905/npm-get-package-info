@@ -30,9 +30,9 @@ describe('package info', () => {
 
   // it('should return throw an error', async () => {
   //   const info = await npmGetPackageInfo({
-  //     name: '',
+  //     name: 'lorem-ipsum-dolor-sit-amet',
   //   });
 
-  //   expect(info).toThrowError();
+  //   // expect(info).toThrowError();
   // });
 });
