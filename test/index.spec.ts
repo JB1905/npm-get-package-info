@@ -27,12 +27,4 @@ describe('package info', () => {
 
     expect(info).not.toBeNull();
   });
-
-  // it('should return throw an error', async () => {
-  //   const info = await npmGetPackageInfo({
-  //     name: 'lorem-ipsum-dolor-sit-amet',
-  //   });
-
-  //   // expect(info).toThrowError();
-  // });
 });
