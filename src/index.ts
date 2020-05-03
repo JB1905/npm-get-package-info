@@ -25,14 +25,24 @@ const npmGetPackageInfo = async ({
     'version',
     'versions',
   ],
-}: Options): Promise<string | Record<Info, any>> => {
-  const { stdout, stderr } = await execAsync(
-    `npm view ${name}${version ? `@${version}` : ''} ${info.join(' ')} -json`
-  );
+}: Options): Promise<Record<Info, any>> => {
+  try {
+    const { stdout, stderr } = await execAsync(
+      `npm view ${name}${version ? `@${version}` : ''} ${info.join(' ')} -json`
+    );
 
-  if (stderr) return stderr;
+    if (stderr) {
+      throw new Error(stderr);
+    }
 
-  return parseOutput ? JSON.parse(stdout) : stdout;
+    if (stdout === '') {
+      throw new Error('Data not found for provided package');
+    }
+
+    return parseOutput ? JSON.parse(stdout) : stdout;
+  } catch (err) {
+    return err;
+  }
 };
 
 export default npmGetPackageInfo;
