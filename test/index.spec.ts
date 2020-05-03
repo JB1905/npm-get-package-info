@@ -51,15 +51,13 @@ describe('package info', () => {
     }
   });
 
-  it('should return throw an error', () => {
-    npmGetPackageInfo({
-      name: 'lorem-ipsum-dolor-sit-amet',
-    })
-      .then((pkg) => {
-        expect(pkg).not.toBe(null);
-      })
-      .catch(({ name }) => {
-        expect(name).toBe('Error');
+  it('should return throw an error', async () => {
+    try {
+      await npmGetPackageInfo({
+        name: 'lorem-ipsum-dolor-sit-amet',
       });
+    } catch (err) {
+      expect(err).toBe('Error');
+    }
   });
 });
