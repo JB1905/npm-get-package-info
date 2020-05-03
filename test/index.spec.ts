@@ -30,13 +30,15 @@ describe('package info', () => {
   });
 
   it('should not return data for incorrect info value', async () => {
-    const info = await npmGetPackageInfo({
-      name: 'svelte',
-      version: '3.0.0',
-      info: ['Rick Astley'] as any,
-    });
-
-    expect(info.description).toBe(undefined);
+    try {
+      await npmGetPackageInfo({
+        name: 'svelte',
+        version: '3.0.0',
+        info: ['Rick Astley'] as any,
+      });
+    } catch (err) {
+      expect(err.message).toBe('Rick Astley is not available as info value');
+    }
   });
 
   it('should not return data for incorrect package version', async () => {
@@ -57,7 +59,7 @@ describe('package info', () => {
         name: 'lorem-ipsum-dolor-sit-amet',
       });
     } catch (err) {
-      expect(err).toBe('Error');
+      expect(err.name).toBe('Error');
     }
   });
 });
