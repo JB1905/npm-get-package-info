@@ -9,12 +9,12 @@ import { Info } from './types/Info';
 
 const execAsync = promisify(exec);
 
-const npmGetPackageInfo = async ({
+const npmGetPackageInfo = async <T extends Info>({
   name,
   version,
   parseOutput = true,
   info = defaultInfo,
-}: Options): Promise<Record<Info, any>> => {
+}: Options<T>): Promise<Record<Extract<Info, T>, any>> => {
   const notAvailableInfoValues = info.filter(
     (value) => !defaultInfo.includes(value)
   );
