@@ -1,26 +1,13 @@
 import { exec } from 'child_process';
 import { promisify } from 'util';
 
+import { defaultInfo } from './defaults';
+
 import { Options } from './interfaces/Options';
 
 import { Info } from './types/Info';
 
 const execAsync = promisify(exec);
-
-const defaultInfo: Info[] = [
-  'dependencies',
-  'deprecated',
-  'description',
-  'dist',
-  'dist-tags',
-  'keywords',
-  'license',
-  'maintainers',
-  'name',
-  'repository',
-  'version',
-  'versions',
-];
 
 const npmGetPackageInfo = async ({
   name,
