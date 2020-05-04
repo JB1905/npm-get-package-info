@@ -1,1 +1,1 @@
-export declare type Info = 'dependencies' | 'deprecated' | 'description' | 'dist' | 'dist-tags' | 'keywords' | 'license' | 'maintainers' | 'name' | 'repository' | 'version' | 'versions';
+export declare type Info = 'author' | 'contributors' | 'dependencies' | 'deprecated' | 'description' | 'dist' | 'dist-tags' | 'homepage' | 'keywords' | 'license' | 'main' | 'maintainers' | 'name' | 'repository' | 'scripts' | 'version' | 'versions';

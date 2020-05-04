@@ -30,7 +30,7 @@ const npmGetPackageInfo = async <T extends Info>({
   }
 
   const { stdout, stderr } = await execAsync(
-    `npm view ${name}${version ? `@${version}` : ''} ${info.join(' ')} -json`
+    `npm view ${name}${version ? `@${version}` : ''} ${info.join(' ')} --json`
   );
 
   if (stderr) {
