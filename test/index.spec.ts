@@ -26,7 +26,7 @@ describe('package info', () => {
       info: ['license', 'description'],
     });
 
-    expect(info).toContain(`"license": "MIT"`);
+    expect(info).toContain('"license": "MIT"');
   });
 
   it('should not return data for incorrect info value', async () => {
