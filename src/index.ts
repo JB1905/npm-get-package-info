@@ -1,36 +1,18 @@
 import { exec } from 'child_process';
 import { promisify } from 'util';
 
-import { defaultInfo } from './defaults';
-
 import { Options } from './interfaces/Options';
-
-import { Info } from './types/Info';
 
 const execAsync = promisify(exec);
 
-const npmGetPackageInfo = async <T extends Info>({
+async function npmGetPackageInfo({
   name,
   version,
   parseOutput = true,
-  info = defaultInfo,
-}: Options<T>): Promise<Record<Extract<Info, T>, any>> => {
-  const notAvailableInfoValues = info.filter(
-    (value) => !defaultInfo.includes(value)
-  );
-
-  if (notAvailableInfoValues.length > 0) {
-    throw new Error(
-      `${notAvailableInfoValues.join(', ')} ${
-        notAvailableInfoValues.length > 1 ? 'are' : 'is'
-      } not available as info value${
-        notAvailableInfoValues.length > 1 ? 's' : ''
-      }`
-    );
-  }
-
+  info = [],
+}: Options) {
   const { stdout, stderr } = await execAsync(
-    `npm view ${name}${version ? `@${version}` : ''} ${info.join(' ')} --json`
+    `npm view ${name}${version ? `@${version}` : ''} --json`
   );
 
   if (stderr) {
@@ -41,7 +23,39 @@ const npmGetPackageInfo = async <T extends Info>({
     throw new Error('Data not found for provided package');
   }
 
-  return parseOutput ? JSON.parse(stdout) : stdout;
-};
+  let results: any;
+
+  const data = JSON.parse(stdout);
+
+  if (Array.isArray(info) && info.length > 0) {
+    if (Array.isArray(data)) {
+      results = [];
+
+      data.map((dataItem) => {
+        const helperObj: Record<string, any> = {};
+
+        info.map((infoItem) => (helperObj[infoItem] = dataItem[infoItem]));
+
+        results.push(helperObj);
+      });
+    } else if (typeof data === 'object') {
+      results = {};
+
+      info.map((infoItem) => (results[infoItem] = data[infoItem]));
+    }
+  } else if (typeof info === 'string') {
+    if (Array.isArray(data)) {
+      results = [];
+
+      data.map((dataItem) => results.push(dataItem[info]));
+    } else if (typeof data === 'object') {
+      results = data[info];
+    }
+  } else {
+    results = data;
+  }
+
+  return parseOutput ? results : JSON.stringify(results);
+}
 
 export default npmGetPackageInfo;

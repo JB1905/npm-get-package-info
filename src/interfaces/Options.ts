@@ -1,8 +1,6 @@
-import { Info } from '../types/Info';
-
-export interface Options<T> {
+export interface Options {
   name: string;
   version?: string;
   parseOutput?: boolean;
-  info?: T[] | Info[];
+  info?: string[] | string;
 }
