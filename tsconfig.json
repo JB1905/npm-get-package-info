@@ -7,8 +7,7 @@
     "outDir": "lib",
     "strict": true,
     "moduleResolution": "node",
-    "esModuleInterop": true,
-    "noImplicitAny": true
+    "esModuleInterop": true
   },
   "exclude": ["lib", "test"]
 }
