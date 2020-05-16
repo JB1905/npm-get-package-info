@@ -29,9 +29,9 @@ const info = await npmGetPackageInfo({
 Name | Type | Default | Description | Available options
 -|-|-|-|-
 **name** | string | `undefined` | Package name | e.g.: `react`
-**version** | string | `undefined` | Package version | e.g.: `16.8.0`
+**version** | string | `undefined` | Package version | e.g.: `16.8.0`, `~2.1.2`, `^4.5.0`
 **parseOutput** | boolean | `true` | Parse results to JSON | Enable `true` / disable `false`
-**info** | Info[] | all `Info` values | Info about packages to be fetched | `Info` values
+**info** | string[] or string | package.json fields keys | Info about packages to be fetched | e.g.: `version`, `contributors`, `main` etc.
 
 ## License
 This project is licensed under the MIT License © 2020-present Jakub Biesiada
