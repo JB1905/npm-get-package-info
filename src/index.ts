@@ -25,34 +25,36 @@ async function npmGetPackageInfo({
 
   let results: any;
 
-  const data = JSON.parse(stdout);
+  const parsedResults = JSON.parse(stdout);
 
   if (Array.isArray(info) && info.length > 0) {
-    if (Array.isArray(data)) {
+    if (Array.isArray(parsedResults)) {
       results = [];
 
-      data.map((dataItem) => {
-        const helperObj: Record<string, any> = {};
+      parsedResults.map((parsedResult) => {
+        const extractedFields: Record<string, any> = {};
 
-        info.map((infoItem) => (helperObj[infoItem] = dataItem[infoItem]));
+        info.map(
+          (infoItem) => (extractedFields[infoItem] = parsedResult[infoItem])
+        );
 
-        results.push(helperObj);
+        results.push(extractedFields);
       });
-    } else if (typeof data === 'object') {
+    } else if (typeof parsedResults === 'object') {
       results = {};
 
-      info.map((infoItem) => (results[infoItem] = data[infoItem]));
+      info.map((infoItem) => (results[infoItem] = parsedResults[infoItem]));
     }
   } else if (typeof info === 'string') {
-    if (Array.isArray(data)) {
+    if (Array.isArray(parsedResults)) {
       results = [];
 
-      data.map((dataItem) => results.push(dataItem[info]));
-    } else if (typeof data === 'object') {
-      results = data[info];
+      parsedResults.map((parsedResult) => results.push(parsedResult[info]));
+    } else if (typeof parsedResults === 'object') {
+      results = parsedResults[info];
     }
   } else {
-    results = data;
+    results = parsedResults;
   }
 
   return parseOutput ? results : JSON.stringify(results);
