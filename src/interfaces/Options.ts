@@ -1,6 +1,6 @@
 export interface Options {
-  name: string;
-  version?: string;
-  parseOutput?: boolean;
-  info?: string[] | string;
+  readonly name: string;
+  readonly version?: string;
+  readonly parseOutput?: boolean;
+  readonly info?: string[] | string;
 }
