@@ -23,9 +23,9 @@
   "keywords": [
     "npm",
     "package",
-    "repository",
     "info",
-    "check"
+    "check",
+    "repository"
   ],
   "bugs": {
     "url": "https://github.com/JB1905/npm-get-package-info/issues"
