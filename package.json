@@ -52,6 +52,11 @@
     "util": "^0.12.3"
   },
   "jest": {
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.spec.json"
+      }
+    },
     "transform": {
       "^.+\\.ts?$": "ts-jest"
     }

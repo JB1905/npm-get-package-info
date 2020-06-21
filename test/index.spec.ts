@@ -1,21 +1,13 @@
 import npmGetPackageInfo from '../src';
 
-import * as child_process from 'child_process';
-
-import latest from './__mocks__/results/latest.json';
-import version from './__mocks__/results/version.json';
-import range from './__mocks__/results/range.json';
+import { mockedResults, mockOutput } from './__mocks__/exec';
 
 jest.mock('child_process');
-
-const mockedExec = jest.spyOn(child_process, 'exec');
 
 describe('npmGetPackageInfo', () => {
   describe('latest', () => {
     beforeAll(() => {
-      mockedExec.mockImplementation((_: string, callback: any) =>
-        callback(null, { stdout: JSON.stringify(latest) })
-      );
+      mockOutput({ stdout: JSON.stringify(mockedResults.latest) });
     });
 
     it('should return package info for the latest version', async () => {
@@ -58,9 +50,7 @@ describe('npmGetPackageInfo', () => {
 
   describe('version', () => {
     beforeAll(() => {
-      mockedExec.mockImplementation((_: string, callback: any) =>
-        callback(null, { stdout: JSON.stringify(version) })
-      );
+      mockOutput({ stdout: JSON.stringify(mockedResults.version) });
     });
 
     it('should return description', async () => {
@@ -88,9 +78,7 @@ describe('npmGetPackageInfo', () => {
 
   describe('range', () => {
     beforeAll(() => {
-      mockedExec.mockImplementation((_: string, callback: any) =>
-        callback(null, { stdout: JSON.stringify(range) })
-      );
+      mockOutput({ stdout: JSON.stringify(mockedResults.range) });
     });
 
     it('should return info for versions <1.0.0, 1.1.0)', async () => {
@@ -132,9 +120,7 @@ describe('npmGetPackageInfo', () => {
   });
 
   it('should throw an error', async () => {
-    mockedExec.mockImplementation((_: string, callback: any) =>
-      callback(null, { stdout: '' })
-    );
+    mockOutput({ stdout: '' });
 
     try {
       await npmGetPackageInfo({
@@ -148,9 +134,7 @@ describe('npmGetPackageInfo', () => {
   });
 
   it('should throw an error', async () => {
-    mockedExec.mockImplementation((_: string, callback: any) =>
-      callback(null, { stderr: new Error(), stdout: null })
-    );
+    mockOutput({ stderr: new Error(), stdout: null });
 
     try {
       await npmGetPackageInfo({
