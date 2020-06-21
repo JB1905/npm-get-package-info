@@ -1,0 +1,20 @@
+[
+  {
+    "name": "package",
+    "version": "1.0.0",
+    "license": "MIT",
+    "description": "This is sample description"
+  },
+  {
+    "name": "package",
+    "version": "1.0.1",
+    "license": "MIT",
+    "description": "This is sample description"
+  },
+  {
+    "name": "package",
+    "version": "1.0.2",
+    "license": "MIT",
+    "description": "This is sample description"
+  }
+]
