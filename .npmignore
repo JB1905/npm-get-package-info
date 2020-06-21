@@ -2,7 +2,7 @@ src
 test
 coverage
 
-tsconfig.json
+tsconfig*.json
 .travis.yml
 .prettierrc
 
