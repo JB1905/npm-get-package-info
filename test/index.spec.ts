@@ -5,7 +5,7 @@ import { mockedResults, mockOutput } from './__mocks__/exec';
 jest.mock('child_process');
 
 describe('npmGetPackageInfo', () => {
-  describe('latest', () => {
+  describe('latest version', () => {
     beforeAll(() => {
       mockOutput({ stdout: JSON.stringify(mockedResults.latest) });
     });
@@ -28,7 +28,7 @@ describe('npmGetPackageInfo', () => {
       expect(info).toContain('"license":"MIT"');
     });
 
-    it('should return throw an error', async () => {
+    it('should return throw an error for missing package', async () => {
       try {
         await npmGetPackageInfo({
           name: 'missing-package',
@@ -48,7 +48,7 @@ describe('npmGetPackageInfo', () => {
     });
   });
 
-  describe('version', () => {
+  describe('given version', () => {
     beforeAll(() => {
       mockOutput({ stdout: JSON.stringify(mockedResults.version) });
     });
@@ -63,7 +63,7 @@ describe('npmGetPackageInfo', () => {
       expect(info).toBe('This is sample description');
     });
 
-    it('should not return data for incorrect package version', async () => {
+    it('should throw an error for incorrect package version', async () => {
       try {
         await npmGetPackageInfo({
           name: 'package',
@@ -76,7 +76,7 @@ describe('npmGetPackageInfo', () => {
     });
   });
 
-  describe('range', () => {
+  describe('version range', () => {
     beforeAll(() => {
       mockOutput({ stdout: JSON.stringify(mockedResults.range) });
     });
@@ -119,7 +119,7 @@ describe('npmGetPackageInfo', () => {
     });
   });
 
-  it('should throw an error', async () => {
+  it('should throw an error for empty result', async () => {
     mockOutput({ stdout: '' });
 
     try {
@@ -133,7 +133,7 @@ describe('npmGetPackageInfo', () => {
     }
   });
 
-  it('should throw an error', async () => {
+  it('should throw a connection error', async () => {
     mockOutput({ stderr: new Error(), stdout: null });
 
     try {
