@@ -1,6 +1,6 @@
 {
   "name": "npm-get-package-info",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Get info about npm package",
   "author": "Jakub Biesiada",
   "license": "MIT",
@@ -44,7 +44,7 @@
     "prettier": "^2.0.5",
     "rollup-plugin-terser": "^6.1.0",
     "rollup-plugin-typescript2": "^0.27.1",
-    "ts-jest": "^26.1.0",
+    "ts-jest": "^26.1.1",
     "typescript": "^3.9.5"
   },
   "peerDependencies": {

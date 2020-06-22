@@ -1,6 +1,6 @@
 # npm-get-package-info Changelog
 
-## 2.0.1 (2020-06-22)
+## 2.0.1 / 2.0.2 (2020-06-22)
 
 #### Tests
 
