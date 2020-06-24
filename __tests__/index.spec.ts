@@ -28,7 +28,7 @@ describe('npmGetPackageInfo', () => {
       expect(info).toContain('"license":"MIT"');
     });
 
-    it('should return throw an error for missing package', async () => {
+    it('should throw an error for missing package', async () => {
       try {
         await npmGetPackageInfo({
           name: 'missing-package',
