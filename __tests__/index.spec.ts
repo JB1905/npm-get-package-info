@@ -1,6 +1,6 @@
 import npmGetPackageInfo from '../src';
 
-import { mockedResults, mockOutput } from './__mocks__/exec';
+import { mockedResults, mockOutput } from '../__mocks__/exec';
 
 jest.mock('child_process');
 
