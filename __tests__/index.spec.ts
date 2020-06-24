@@ -28,7 +28,7 @@ describe('npmGetPackageInfo', () => {
       expect(info).toContain('"license":"MIT"');
     });
 
-    it('should throw an error for missing package', async () => {
+    it('should return an error for missing package', async () => {
       try {
         await npmGetPackageInfo({
           name: 'missing-package',
@@ -63,7 +63,7 @@ describe('npmGetPackageInfo', () => {
       expect(info).toBe('This is sample description');
     });
 
-    it('should throw an error for incorrect package version', async () => {
+    it('should return an error for incorrect package version', async () => {
       try {
         await npmGetPackageInfo({
           name: 'package',
@@ -119,7 +119,7 @@ describe('npmGetPackageInfo', () => {
     });
   });
 
-  it('should throw an error for empty result', async () => {
+  it('should return an error for empty result', async () => {
     mockOutput({ stdout: '' });
 
     try {
@@ -133,7 +133,7 @@ describe('npmGetPackageInfo', () => {
     }
   });
 
-  it('should throw a connection error', async () => {
+  it('should return a connection error', async () => {
     mockOutput({ stderr: new Error(), stdout: null });
 
     try {
