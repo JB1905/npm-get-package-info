@@ -23,6 +23,20 @@ $ yarn add npm-get-package-info
 
 ## Getting Started
 
+**Connect libary to project using ES6 import:**
+
+```js
+import npmGetPackageInfo from 'npm-get-package-info';
+```
+
+**Or CommonJS:**
+
+```js
+const npmGetPackageInfo = require('npm-get-package-info');
+```
+
+Next use library:
+
 ```js
 const info = await npmGetPackageInfo({
   // options...
