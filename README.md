@@ -1,7 +1,12 @@
 # [npm-get-package-info](https://github.com/jb1905/npm-get-package-info)
 
-[![NPM version](http://img.shields.io/npm/v/npm-get-package-info.svg?style=flat-square)](https://www.npmjs.com/package/npm-get-package-info)
-[![NPM downloads](http://img.shields.io/npm/dm/npm-get-package-info.svg?style=flat-square)](https://www.npmjs.com/package/npm-get-package-info)
+[![NPM version](https://img.shields.io/npm/v/npm-get-package-info?style=flat-square)](https://www.npmjs.com/package/npm-get-package-info)
+[![NPM downloads](https://img.shields.io/npm/dm/npm-get-package-info?style=flat-square)](https://www.npmjs.com/package/npm-get-package-info)
+[![NPM license](https://img.shields.io/npm/l/npm-get-package-info?style=flat-square)](https://www.npmjs.com/package/npm-get-package-info)
+[![All Contributors](https://img.shields.io/github/all-contributors/JB1905/npm-get-package-info?style=flat-square)](#contributors-)
+[![Codecov](https://img.shields.io/codecov/c/github/JB1905/npm-get-package-info?style=flat-square)](https://codecov.io/gh/JB1905/npm-get-package-info)
+[![Travis](https://img.shields.io/travis/JB1905/npm-get-package-info?style=flat-square)](https://travis-ci.org/JB1905/npm-get-package-info)
+[![Bundle size](https://img.shields.io/bundlephobia/min/npm-get-package-info?style=flat-square)](https://bundlephobia.com/result?p=npm-get-package-info)
 
 ## About
 
