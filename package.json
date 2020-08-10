@@ -16,7 +16,8 @@
     "watch:test": "npm run test -- --watch",
     "lint": "eslint 'src/**/*.ts' --fix",
     "prettier": "prettier --write 'src/**/*.ts'",
-    "release": "semantic-release"
+    "commit": "git-cz",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
@@ -35,8 +36,9 @@
   "homepage": "https://github.com/JB1905/npm-get-package-info#readme",
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^8.4.0",
-    "@types/jest": "^26.0.8",
-    "@typescript-eslint/parser": "^3.7.1",
+    "@types/jest": "^26.0.9",
+    "@typescript-eslint/parser": "^3.8.0",
+    "cz-conventional-changelog": "3.2.0",
     "eslint": "^7.6.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
@@ -45,7 +47,7 @@
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
     "rollup-plugin-terser": "^6.1.0",
-    "rollup-plugin-typescript2": "^0.27.1",
+    "rollup-plugin-typescript2": "^0.27.2",
     "ts-jest": "^26.1.4",
     "typescript": "^3.9.7",
     "semantic-release": "^17.1.1"
@@ -53,6 +55,11 @@
   "peerDependencies": {
     "child_process": "^1.0.2",
     "util": "^0.12.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
   "jest": {
     "globals": {
