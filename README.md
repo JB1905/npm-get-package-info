@@ -1,4 +1,4 @@
-# [npm-get-package-info](https://github.com/jb1905/npm-get-package-info)
+# [npm-get-package-info](https://github.com/JB1905/npm-get-package-info)
 
 [![NPM version](https://img.shields.io/npm/v/npm-get-package-info?style=flat-square)](https://www.npmjs.com/package/npm-get-package-info)
 [![NPM downloads](https://img.shields.io/npm/dm/npm-get-package-info?style=flat-square)](https://www.npmjs.com/package/npm-get-package-info)
