@@ -11,6 +11,10 @@
 
 Get info about npm package
 
+### Alternatives
+
+- [package-info](https://github.com/AlessandroMinoccheri/package-info) by [Alessandro Minoccheri](https://github.com/AlessandroMinoccheri)
+
 ## How to Install
 
 First, install the library in your project by npm:
