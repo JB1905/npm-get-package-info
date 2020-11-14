@@ -66,7 +66,7 @@ const info = await npmGetPackageInfo({
 Info for **latest React version**:
 
 ```js
-const info = await npmGetPackageInfo({
+await npmGetPackageInfo({
   name: 'react',
 });
 ```
@@ -74,7 +74,7 @@ const info = await npmGetPackageInfo({
 Not parsed **license and description** for **latest jQuery version**:
 
 ```js
-const info = await npmGetPackageInfo({
+await npmGetPackageInfo({
   name: 'jquery',
   parseOutput: false,
   info: ['license', 'description'],
@@ -84,7 +84,7 @@ const info = await npmGetPackageInfo({
 **Description** for **Angular v9.0.0**:
 
 ```js
-const info = await npmGetPackageInfo({
+await npmGetPackageInfo({
   name: 'angular',
   version: '9.0.0',
   info: 'description',
