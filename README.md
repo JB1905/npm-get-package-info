@@ -61,6 +61,36 @@ const info = await npmGetPackageInfo({
 | **parseOutput** | boolean            | `true`                   | Parse results to JSON             | Enable `true` / disable `false`              |
 | **info**        | string[] or string | package.json fields keys | Info about packages to be fetched | e.g.: `version`, `contributors`, `main` etc. |
 
+## Example
+
+Info for **latest React version**:
+
+```js
+const info = await npmGetPackageInfo({
+  name: 'react',
+});
+```
+
+Not parsed **license and description** for **latest jQuery version**:
+
+```js
+const info = await npmGetPackageInfo({
+  name: 'jquery',
+  parseOutput: false,
+  info: ['license', 'description'],
+});
+```
+
+**Description** for **Angular v9.0.0**:
+
+```js
+const info = await npmGetPackageInfo({
+  name: 'angular',
+  version: '9.0.0',
+  info: 'description',
+});
+```
+
 ## License
 
 This project is licensed under the MIT License © 2020-present Jakub Biesiada
