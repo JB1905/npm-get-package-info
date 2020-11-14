@@ -13,6 +13,7 @@ Get info about npm package
 
 ### Alternatives
 
+- [npm-view](https://docs.npmjs.com/cli/v7/commands/npm-view)
 - [package-info](https://github.com/AlessandroMinoccheri/package-info) by [Alessandro Minoccheri](https://github.com/AlessandroMinoccheri)
 
 ## How to Install
