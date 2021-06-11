@@ -4,7 +4,7 @@
 [![NPM downloads](https://img.shields.io/npm/dm/npm-get-package-info?style=flat-square)](https://www.npmjs.com/package/npm-get-package-info)
 [![NPM license](https://img.shields.io/npm/l/npm-get-package-info?style=flat-square)](https://www.npmjs.com/package/npm-get-package-info)
 [![Codecov](https://img.shields.io/codecov/c/github/JB1905/npm-get-package-info?style=flat-square)](https://codecov.io/gh/JB1905/npm-get-package-info)
-[![Travis](https://img.shields.io/travis/com/JB1905/npm-get-package-info/master?style=flat-square)](https://travis-ci.com/JB1905/npm-get-package-info)
+[![Travis](https://img.shields.io/travis/com/JB1905/npm-get-package-info/main?style=flat-square)](https://travis-ci.com/JB1905/npm-get-package-info)
 [![Bundle size](https://img.shields.io/bundlephobia/min/npm-get-package-info?style=flat-square)](https://bundlephobia.com/result?p=npm-get-package-info)
 
 ## About
