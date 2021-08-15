@@ -32,7 +32,7 @@ $ yarn add npm-get-package-info
 
 ## Getting Started
 
-**Connect libary to project using ES6 import:**
+**Connect the library to the project with ES6 import:**
 
 ```js
 import npmGetPackageInfo from 'npm-get-package-info';
