@@ -52,7 +52,7 @@
     "rollup-plugin-typescript2": "^0.30.0",
     "ts-jest": "^27.0.3",
     "typescript": "^4.3.5",
-    "semantic-release": "^17.4.4"
+    "semantic-release": "^19.0.3"
   },
   "peerDependencies": {
     "child_process": "^1.0.2",
